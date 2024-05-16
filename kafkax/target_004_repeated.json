@@ -1,0 +1,98 @@
+{
+  "targets": [
+    {
+      "brokers": ["localhost:9092"],
+      "admin": {
+        "create_topics":[
+          {
+            "name": "test"
+          }
+        ],
+        "delete_topics": [
+        ]
+      },
+      "producer": {
+        "messages": [
+          {
+            "topic": "test",
+            "type": "scanal",
+            "scanal_body": {
+              "uuid": "",
+              "command": "insert",
+              "table": "mall_db_004.order_tab_004",
+              "timestamp_db": 0,
+              "timestamp_canal": 0,
+              "column_count": 0,
+              "primary_keys": ["order_id"],
+              "new_row": {
+                "order_id": "order-id-004",
+                "amount": 9999,
+                "status": 1,
+                "create_time": 0,
+                "complete_time": 0
+              },
+              "old_row": {},
+              "rows_type": {},
+              "status": 0
+            }
+          },
+          {
+            "topic": "test",
+            "type": "scanal",
+            "scanal_body": {
+              "uuid": "",
+              "command": "insert",
+              "table": "pay_db_004.txn_tab_004",
+              "timestamp_db": 0,
+              "timestamp_canal": 0,
+              "column_count": 0,
+              "primary_keys": [
+                "id"
+              ],
+              "new_row": {
+                "txn_id": "txn-id-004",
+                "order_id": "order-id-004",
+                "amount": 9999,
+                "status": 1,
+                "create_time": 0,
+                "complete_time": 0
+              },
+              "old_row": {},
+              "rows_type": {},
+              "status": 0
+            }
+          },
+          {
+            "topic": "test",
+            "type": "scanal",
+            "scanal_body": {
+              "uuid": "",
+              "command": "insert",
+              "table": "pay_db_004.txn_tab_004",
+              "timestamp_db": 0,
+              "timestamp_canal": 0,
+              "column_count": 0,
+              "primary_keys": ["id"],
+              "new_row": {
+                "txn_id": "txn-id-004-000",
+                "order_id": "order-id-004",
+                "amount": 9999,
+                "status": 1,
+                "create_time": 0,
+                "complete_time": 0
+              },
+              "old_row": {},
+              "rows_type": {},
+              "status": 0
+            }
+          }
+        ]
+      },
+      "consumer": {
+        "partition": 0,
+        "start": 0,
+        "end": 100
+      }
+    }
+  ]
+}
